@@ -32,7 +32,7 @@ Asegúrate de tener instalado lo siguiente en tu computadora antes de comenzar:
 
 ```npm run dev```
 
-5. Abre tu navegador web y entra a la dirección `http://localhost:3000`.
+5. Ingresa el link en el servidor de desarrollo para abrir tu App
 
 ## Uso
 
