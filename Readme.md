@@ -1,6 +1,6 @@
-# Título del Proyecto
+# Search Github Users
 
-Breve descripción del proyecto y sus características principales.
+Aplicación que se encarga de buscar usuarios de Github.
 
 ## Tecnologías
 
@@ -32,12 +32,12 @@ Asegúrate de tener instalado lo siguiente en tu computadora antes de comenzar:
 
 ```npm run dev```
 
-5. Ingresa el link en el servidor de desarrollo para abrir tu App
+5. Ingresa en el link proporcionado por el servidor de desarrollo para abrir tu App
 
 ## Uso
 
-Explica cómo utilizar y navegar por tu proyecto.
+-Completar-
 
 ## Contribuir
 
-Explica cómo los usuarios pueden contribuir al proyecto. Por ejemplo, si permites solicitudes de extracción en GitHub, proporciona una descripción de cómo se pueden enviar y aprobar solicitudes de extracción.
+-Completar-
