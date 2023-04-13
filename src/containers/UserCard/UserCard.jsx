@@ -1,10 +1,25 @@
-import { CardMedia, Grid, Stack } from '@mui/material'
+import { CardMedia, Grid, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { PrincipalInformation } from '../../components/PrincipalInformation/PrincipalInformation'
 import { Description } from '../Description/Description'
 
-export const UserCard = ({ userState }) => {
+export const UserCard = ({ userState, notFound }) => {
   const avatarUrl = userState.avatar_url
+  if (notFound) {
+    return (
+      <Typography
+        variant='h3'
+        color='text.primary'
+        sx={{
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >USER NOT FOUND
+      </Typography>
+    )
+  }
   return (
     <Grid
       container
@@ -13,7 +28,7 @@ export const UserCard = ({ userState }) => {
         marginTop: '15px'
       }}
     >
-      <Grid item xs={3}>
+      <Grid item xs={2}>
         <CardMedia
           component='img'
           alt='Github User'

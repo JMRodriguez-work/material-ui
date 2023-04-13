@@ -17,26 +17,26 @@ export const LocationInformation = ({ userState: { location, twitter_username: t
     >
       <Grid item xs={6}>
         <Stack direction='row' spacing={2}>
-          <LocationOnIcon color='primary' />
-          <Typography color='primary'>{doesExist(location)}</Typography>
+          <LocationOnIcon sx={{ fontSize: { xs: '1rem', md: '1.5rem' } }} color='primary' />
+          <Typography sx={{ fontSize: { xs: '.7rem', md: '1rem' } }} color='primary'>{doesExist(location)}</Typography>
         </Stack>
       </Grid>
       <Grid item xs={6}>
         <Stack direction='row' spacing={2}>
-          <TwitterIcon color='primary' />
-          <Typography color='primary'>@{doesExist(twitter)}</Typography>
+          <TwitterIcon sx={{ fontSize: { xs: '1rem', md: '1.5rem' } }} color='primary' />
+          <Typography sx={{ fontSize: { xs: '.7rem', md: '1rem' } }} color='primary'>@{doesExist(twitter)}</Typography>
         </Stack>
       </Grid>
       <Grid item xs={6}>
         <Stack direction='row' spacing={2}>
-          <LanguageIcon color='primary' />
-          <a href={blog || null} target='_blank' rel='noopener noreferrer'><Typography color='primary'>{doesExist(blog)}</Typography></a>
+          <LanguageIcon sx={{ fontSize: { xs: '1rem', md: '1.5rem' } }} color='primary' />
+          <a href={blog || null} target='_blank' rel='noopener noreferrer'><Typography sx={{ fontSize: { xs: '.7rem', md: '1rem' } }} color='primary'>{doesExist(blog)}</Typography></a>
         </Stack>
       </Grid>
       <Grid item xs={6}>
         <Stack direction='row' spacing={2}>
-          <BusinessIcon color='primary' />
-          <Typography color='primary'>{doesExist(company)}</Typography>
+          <BusinessIcon sx={{ fontSize: { xs: '1rem', md: '1.5rem' } }} color='primary' />
+          <Typography sx={{ fontSize: { xs: '.7rem', md: '1rem' } }} color='primary'>{doesExist(company)}</Typography>
         </Stack>
       </Grid>
     </Grid>

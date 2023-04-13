@@ -8,8 +8,14 @@ import theme from './theme'
 
 const containerStyle = {
   background: '#242629',
-  width: '80vw',
-  height: '500px',
+  width: {
+    md: '80vw',
+    xs: '90vw'
+  },
+  height: {
+    sm: '30rem',
+    xs: '100vh'
+  },
   borderRadius: '16px',
   display: 'flex',
   flexDirection: 'column',
@@ -33,14 +39,14 @@ function App () {
           const firstUser = JSON.parse(window.localStorage.getItem('JMRodriguezwork'))
           setInputUser(firstUser)
           setNotFound(true)
-        } else if (userResponse.message.slice(0, 3) === 'API') {
+        } else if (userResponse.message?.slice(0, 3) === 'API') {
           setError('Something went wrong - API limit exceded for the hour')
         } else {
           setNotFound(false)
         }
         setUserState(userResponse)
-      } catch (error) {
-        setError('Something went wrong')
+      } catch (errorr) {
+        setError('Something went wrong: ' + errorr)
         setUserState('JMRodriguez-work')
       }
     }
@@ -48,13 +54,12 @@ function App () {
   }, [inputUser])
 
   if (error) return <h1 style={{ color: '#D4E7E2' }}>{error}</h1>
-  if (notFound) return <h1 style={{ color: '#D4E7E2' }}>USER NOT FOUND</h1>
 
   return (
     <ThemeProvider theme={theme}>
       <Container sx={containerStyle}>
-        <Searcher setInputUser={setInputUser} />
-        <UserCard userState={userState} />
+        <Searcher notFound={notFound} setInputUser={setInputUser} />
+        <UserCard notFound={notFound} userState={userState} />
       </Container>
     </ThemeProvider>
   )

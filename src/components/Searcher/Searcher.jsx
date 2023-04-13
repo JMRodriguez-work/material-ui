@@ -12,7 +12,7 @@ const textFieldStyles = {
   margin: '0 auto'
 }
 
-export const Searcher = ({ setInputUser }) => {
+export const Searcher = ({ setInputUser, notFound }) => {
   const [valueInput, setValueInput] = useState('')
 
   const onSearchValueChange = (e) => {
@@ -32,8 +32,9 @@ export const Searcher = ({ setInputUser }) => {
         label='Github user'
         id='outlined-basic'
         variant='outlined'
+        color={notFound ? 'error' : 'primary'}
         placeholder='JMRodriguez-work'
-        value={valueInput}
+        value={notFound ? 'User Not Found' : valueInput}
         onChange={onSearchValueChange}
         InputProps={{
           endAdornment: (
