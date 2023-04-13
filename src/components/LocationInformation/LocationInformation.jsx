@@ -30,7 +30,7 @@ export const LocationInformation = ({ userState: { location, twitter_username: t
       <Grid item xs={6}>
         <Stack direction='row' spacing={2}>
           <LanguageIcon sx={{ fontSize: { xs: '1rem', md: '1.5rem' } }} color='primary' />
-          <a href={blog || null} target='_blank' rel='noopener noreferrer'><Typography sx={{ fontSize: { xs: '.7rem', md: '1rem' } }} color='primary'>{doesExist(blog)}</Typography></a>
+          <a href={`https://${blog}` || null} target='_blank' rel='noopener noreferrer'><Typography sx={{ fontSize: { xs: '.7rem', md: '1rem' } }} color='primary'>{doesExist(blog)}</Typography></a>
         </Stack>
       </Grid>
       <Grid item xs={6}>
