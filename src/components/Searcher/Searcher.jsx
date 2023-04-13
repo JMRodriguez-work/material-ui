@@ -1,21 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Stack, TextField, IconButton } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
-export const Searcher = () => {
-  const stackStyles = {
-    marginTop: '40px',
-    width: '80%'
+const stackStyles = {
+  marginTop: '40px',
+  width: '80%'
 
+}
+const textFieldStyles = {
+  width: '90%',
+  margin: '0 auto'
+}
+
+export const Searcher = ({ setInputUser }) => {
+  const [valueInput, setValueInput] = useState('')
+
+  const onSearchValueChange = (e) => {
+    setValueInput(e.target.value)
   }
-  const textFieldStyles = {
-    width: '90%',
-    margin: '0 auto'
+  const handleSubmit = (e) => {
+    setInputUser(valueInput)
   }
 
   return (
     <Stack sx={stackStyles} direction='row'>
       <TextField
+        name='searchbar'
         sx={textFieldStyles}
         type='search'
         autoComplete='off'
@@ -23,9 +33,11 @@ export const Searcher = () => {
         id='outlined-basic'
         variant='outlined'
         placeholder='JMRodriguez-work'
+        value={valueInput}
+        onChange={onSearchValueChange}
         InputProps={{
           endAdornment: (
-            <IconButton>
+            <IconButton onClick={handleSubmit}>
               <SearchIcon />
             </IconButton>
           )
